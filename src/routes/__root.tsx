@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Portfolio of Prajwal, aspiring IT professional from India — Linux administration, networking, technical support and hardware troubleshooting.",
+          "Portfolio of Prajwal, IT professional from India — Linux administration, networking, technical support and hardware troubleshooting.",
       },
       { name: "author", content: "Prajwal" },
       { name: "theme-color", content: "#0b1020" },

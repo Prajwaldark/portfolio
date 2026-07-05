@@ -1,6 +1,6 @@
 export const PROFILE = {
   name: "PRAJWAL",
-  tagline: "Aspiring IT Professional · India",
+  tagline: "IT Professional · India",
   focus: ["Linux", "Networking", "Technical Support", "Hardware Troubleshooting"],
   email: "prajwalnithyananda@gmail.com",
   github: "https://github.com/prajwaldark",

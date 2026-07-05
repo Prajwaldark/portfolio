@@ -2,22 +2,27 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { PROFILE } from "@/lib/portfolio-data";
 import { SectionTitle } from "./SectionTitle";
+import { submitContact } from "@/lib/api/contact.functions";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
   const [opening, setOpening] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setOpening(true);
-    setTimeout(() => {
-      const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
-      const body = encodeURIComponent(`${form.message}\n\n— ${form.name} <${form.email}>`);
-      window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
+    try {
+      await Promise.all([
+        submitContact({ data: form }),
+        new Promise((resolve) => setTimeout(resolve, 1100)),
+      ]);
       setSent(true);
+    } catch (error) {
+      console.error("Error opening portal:", error);
+    } finally {
       setOpening(false);
-    }, 1100);
+    }
   };
 
   return (

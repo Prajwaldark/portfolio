@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio of Prajwal, aspiring IT professional from India. Linux administration, networking, technical support and hardware troubleshooting.",
+          "Portfolio of Prajwal, IT professional from India. Linux administration, networking, technical support and hardware troubleshooting.",
       },
       { property: "og:title", content: "Prajwal — Multiverse of IT" },
       {
